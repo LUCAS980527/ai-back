@@ -5,4 +5,13 @@ const getImageAnalysis = async (req, res) => {
     mimetype: req.file.mimetype,
     size: req.file.size,
   });
+
+  try{
+    const base64Image = req.file.buffer.tostring("base64");
+    console.log("base64Image", base64Image);
+
+    const chatCompletion = await client.chatCompletion({
+        
+    })
+  }
 };
