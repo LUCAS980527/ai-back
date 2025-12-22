@@ -1,5 +1,13 @@
 const express = require("express");
 const cors = require("cors");
+const dotenv = require("dotenv");
+const getImageAnalysis = require("./image-analysis/index");
+
+
+const multer = require("multer");
+const storage = multer.memoryStorage();
+const upload = multer({storage});
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 1000;
